@@ -1,38 +1,146 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #222;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  margin: 2%;
+  padding: 0.5%;
+  height: 5%;
+  max-width: 760px;
+  width: 80%;
+  background-color: #333;
+  border: 2px solid #333;
+  border-radius: 8px;
+  outline: none;
+  font-size: 20px;
+  color: #fff;
+
+}
+
+/* keyboard */
+
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  width: 100%;
+  border: 2px solid #444;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+.key {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 1%;
+  width: 7%;
+  background-color: #333;
+  border: 2px solid #444;
+  font-size: 20px;
+  color: #fff;
+  /* border-radius: 4px; */
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  transition: background-color 200ms, opacity 200ms;
 }
 
-.App-link {
-  color: #61dafb;
+.key:hover {
+  opacity: 0.8;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.key__tab,
+.key__caps,
+.key__shift-left {
+  justify-content: flex-start;
+  font-size: 12px;
+}
+
+.key__backspace,
+.key__enter,
+.key__shift-right {
+  justify-content: flex-end;
+  font-size: 12px;
+}
+
+.key__backspace,
+.key__tab {
+  width: 9%;
+  aspect-ratio: 9 / 7;
+}
+
+
+.key__caps,
+.key__enter {
+  width: 11.5%;
+  aspect-ratio: 23 / 14;
+}
+
+.key__shift-left,
+.key__shift-right {
+  width: 15%;
+  aspect-ratio: 15 / 7;
+}
+
+.key__filler {
+  width: 29%;
+  aspect-ratio: 29 / 7;
+  cursor: initial;
+}
+
+.key__filler:hover {
+  opacity: 1;
+}
+
+.key__space {
+  width: 42%;
+  aspect-ratio: 7 / 1;
+}
+
+@media (max-width: 768px) {
+  .key {
+    border-width: 1px;
+    font-size: 16px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .key__tab,
+  .key__caps,
+  .key__shift-left,
+  .key__backspace,
+  .key__enter,
+  .key__shift-right {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .key {
+    font-size: 12px;
+  }
+
+  .key__tab,
+  .key__caps,
+  .key__shift-left,
+  .key__backspace,
+  .key__enter,
+  .key__shift-right {
+    font-size: 8px;
   }
 }
