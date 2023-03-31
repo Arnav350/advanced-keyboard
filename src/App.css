@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #222;
+  background-color: #111;
 }
 
 .container {
@@ -21,12 +21,12 @@ body {
   height: 5%;
   max-width: 760px;
   width: 80%;
-  background-color: #333;
-  border: 2px solid #333;
+  background-color: #222;
+  border: 2px solid #222;
   border-radius: 8px;
   outline: none;
   font-size: 20px;
-  color: #fff;
+  color: #ddd;
 
 }
 
@@ -38,7 +38,7 @@ body {
   flex-direction: column;
   max-width: 1000px;
   width: 100%;
-  border: 2px solid #444;
+  border: 2px solid #333;
 }
 
 .row {
@@ -52,10 +52,10 @@ body {
   justify-content: center;
   padding: 1%;
   width: 7%;
-  background-color: #333;
-  border: 2px solid #444;
+  background-color: #222;
+  border: 2px solid #333;
   font-size: 20px;
-  color: #fff;
+  color: #ddd;
   /* border-radius: 4px; */
   aspect-ratio: 1 / 1;
   cursor: pointer;

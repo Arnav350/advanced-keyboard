@@ -10,10 +10,10 @@ function App() {
 
   function handlePress(event: any) {
     const keys = document.querySelectorAll<HTMLDivElement>(".key");
-    for (let i = 0; i < keys.length; i++) {
-      keys[i].style.backgroundColor = "#333";
+    for (let i: number = 0; i < keys.length; i++) {
+      keys[i].style.backgroundColor = "#222";
       if (keys[i].innerHTML === event.key) {
-        keys[i].style.backgroundColor = "#555";
+        keys[i].style.backgroundColor = "#333";
       }
     }
   }
