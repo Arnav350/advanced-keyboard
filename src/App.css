@@ -4,15 +4,29 @@
   box-sizing: border-box;
 }
 
-body {
-  background-color: #111;
+html,
+body,
+#root,
+.container {
+  height: 100%;
+}
+
+.container,
+.input,
+.normal,
+.shifted,
+.upper-case,
+.key {
+  transition: background-color 200ms, opacity 200ms, border-color 200ms, color 200ms;
 }
 
 .container {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #111;
 }
 
 .input {
@@ -27,17 +41,23 @@ body {
   outline: none;
   font-size: 20px;
   color: #ddd;
+}
 
+.picker {
+  position: absolute;
+  top: 60%;
+  translate: 0 -50%;
 }
 
 /* keyboard */
 
-
-.keyboard {
+.normal,
+.shifted,
+.upper-case {
   display: flex;
   flex-direction: column;
   max-width: 1000px;
-  width: 100%;
+  width: 80%;
   border: 2px solid #333;
 }
 
@@ -56,28 +76,30 @@ body {
   border: 2px solid #333;
   font-size: 20px;
   color: #ddd;
-  /* border-radius: 4px; */
   aspect-ratio: 1 / 1;
   cursor: pointer;
-  transition: background-color 200ms, opacity 200ms;
 }
 
 .key:hover {
   opacity: 0.8;
 }
 
+.key:active {
+  background-color: #888;
+}
+
 .key__tab,
 .key__caps,
 .key__shift-left {
   justify-content: flex-start;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .key__backspace,
 .key__enter,
 .key__shift-right {
   justify-content: flex-end;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .key__backspace,
@@ -100,13 +122,9 @@ body {
 }
 
 .key__filler {
+  font-size: 24px;
   width: 29%;
   aspect-ratio: 29 / 7;
-  cursor: initial;
-}
-
-.key__filler:hover {
-  opacity: 1;
 }
 
 .key__space {
@@ -114,10 +132,44 @@ body {
   aspect-ratio: 7 / 1;
 }
 
+.light .input {
+  background-color: #e8e8e8;
+  border-color: #e8e8e8;
+  color: #111;
+}
+
+.light .normal,
+.light .shifted,
+.light .upper-case,
+.light .key {
+  border-color: #ddd;
+}
+
+.light .key {
+  background-color: #f2f2f2;
+  color: #111;
+}
+
+.light .key:hover {
+  background-color: #e8e8e8;
+}
+
 @media (max-width: 768px) {
+
+  .normal,
+  .shifted,
+  .upper-case {
+    border-width: 1px;
+  }
+
   .key {
     border-width: 1px;
     font-size: 16px;
+  }
+
+  .key__filler {
+    border-width: 1px;
+    font-size: 18px;
   }
 
   .key__tab,
@@ -125,13 +177,16 @@ body {
   .key__shift-left,
   .key__backspace,
   .key__enter,
-  .key__shift-right {
-    font-size: 10px;
+  .key__shift-right,
+  .key__space {
+    font-size: 12px;
   }
 }
 
 @media (max-width: 420px) {
-  .key {
+
+  .key,
+  .key__filler {
     font-size: 12px;
   }
 
@@ -140,7 +195,8 @@ body {
   .key__shift-left,
   .key__backspace,
   .key__enter,
-  .key__shift-right {
-    font-size: 8px;
+  .key__shift-right,
+  .key__space {
+    font-size: 10px;
   }
 }
