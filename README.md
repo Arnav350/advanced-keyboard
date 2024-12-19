@@ -2,4 +2,4 @@
 
 A virtual keyboard app that mimics the experience of a physical keyboard. Includes shift and caps lock as well as emojis and dark/light modes.
 
-<https://willowy-sopapillas-ed16a6.netlify.app>
+<https://keyboard-ap.netlify.app/>
